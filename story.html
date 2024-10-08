@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="root">
+        <main class="section">
+            <a href="index.html"><img src="./img/home.png" alt="Home"></a>
+            <h1>The Wizarding World of Harry Potter</h1>
+            <h3>Let's dive in!</h3>
+        </main>
+        <section class = "slider">
+            <img src="./img/flourish.svg" alt="" class = "break">
+            <section class="blockSlider" id="blockSlider">
+                <section class="FullArea">
+                    <section class="imagesArea">
+                        <img class="imageSlider" src="./img/b1.jpg" alt="">
+                        <img class="imageSlider" src="./img/b2.jpg" alt="">
+                        <img class="imageSlider" src="./img/b3.jpg" alt="">
+                        <img class="imageSlider" src="./img/b4.jpg" alt="">
+                        <img class="imageSlider" src="./img/b5.jpg" alt="">
+                        <img class="imageSlider" src="./img/b6.jpg" alt="">
+                        <img class="imageSlider" src="./img/b7.jpg" alt="">
+                    </section>
+        
+                    <section class="pointsAreaSize">
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                    </section>
+        
+                    <section class="btnsAreaSize">
+                        <section class="blockArrow" id="leftBtn"><i class="fa fa-angle-left" aria-hidden="true"></i></section>
+                        <section class="blockArrow" id="rightBtn"><i class="fa fa-angle-right" aria-hidden="true"></i></section>
+                    </section>
+                </section>
+            </section>
+            <img src="./img/flourish.svg" alt="" class = "break">
+            <div class="star-container"></div>
+        </section>
+    </div>
+</body>
+<script>
+    let point = document.querySelectorAll('.point')
+let imageSlider = document.querySelectorAll('.imageSlider')
+let leftBtn = document.getElementById('leftBtn')
+let rightBtn = document.getElementById('rightBtn')
+
+point[0].classList.add('activeImage')
+imageSlider[0].classList.add('activeImage')
+
+let counter = 0;
+
+for(let i=0; i<point.length; i++){
+    point[i].addEventListener('click',()=>{
+        for(let k = 0; k<imageSlider.length; k++){
+            point[k].classList.remove('activeImage')
+            imageSlider[k].classList.remove('activeImage')
+        }
+        counter = i;
+        imageSlider[counter].classList.add('activeImage');
+        point[counter].classList.add('activeImage');
+    })
+}
+
+leftBtn.addEventListener('click',()=>{
+    for(let k = 0; k<imageSlider.length; k++){
+        point[k].classList.remove('activeImage')
+        imageSlider[k].classList.remove('activeImage')
+    }
+    counter--
+    if (counter <0){
+        counter = imageSlider.length-1
+    }
+    imageSlider[counter].classList.add('activeImage');
+    point[counter].classList.add('activeImage');
+})
+
+rightBtn.addEventListener('click',()=>{
+    for(let k = 0; k<imageSlider.length; k++){
+        point[k].classList.remove('activeImage')
+        imageSlider[k].classList.remove('activeImage')
+    }
+    counter++
+    if (counter >= imageSlider.length){
+        counter = 0
+    }
+    imageSlider[counter].classList.add('activeImage');
+    point[counter].classList.add('activeImage');
+})
+function slowSlider () {
+    for(let k = 0; k<imageSlider.length; k++){
+        point[k].classList.remove('activeImage')
+        imageSlider[k].classList.remove('activeImage')
+    }
+    counter++
+    if (counter >= imageSlider.length){
+        counter = 0
+    }
+    imageSlider[counter].classList.add('activeImage');
+    point[counter].classList.add('activeImage');
+}
+
+let second = 1000*2
+let TimerImage = setInterval(()=>slowSlider(), second)
+
+let blockSlider = document.getElementById('blockSlider')
+blockSlider.addEventListener('mouseover',()=>{
+    clearInterval(TimerImage)
+})
+
+blockSlider.addEventListener('mouseleave',()=>{
+    TimerImage = setInterval(()=>slowSlider(), second)
+})
+</script>
+<script>
+    const params = {
+  amount: 200,
+  size: {
+    min: 1,
+    max: 5,
+    giant: 9
+  },
+  duration: {
+    min: 5,
+    max: 25,
+  }
+};
+
+const randomBetween = (a, b) => {
+  return (a + (Math.random() * (b - a)));
+};
+
+$(document).ready(() => {
+  const rootDiv = $("#root");
+
+  for (let i = 0; i < params.amount; i++) {
+    let star = $("<div></div>");
+    let size = Math.round(Math.random() * 10) === 0 ? params.size.giant : randomBetween(params.size.min, params.size.max);
+    star.css({
+      "width": size + "px",
+      "height": size + "px",
+      "left": randomBetween(0, 100) + "%",
+      "top": randomBetween(0, 100) + "%",
+      "box-shadow": "0 0 " + size + "px " + size / 2 + "px #043668",
+      "animation-duration": randomBetween(params.duration.min, params.duration.max) + "s"
+    });
+
+    rootDiv.append(star);
+  }
+});
+</script>
+</html>

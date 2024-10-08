@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter friends</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="start">
+    <div class = "homeFriend">
+        <a href="index.html"><img src="./img/home.png" alt="Home"></a>
+    </div>
+    <div>
+        <h1 class = "h1">Friends</h1>
+        <div class="quote">
+            <img src="./img/gallery-bord.svg" alt="bord" width="350" height="350">
+            <h3>"You need courage to stand against your enemies, but even greater courage to go against your friends."<br><br>©Albus Dumbledore</h3>
+        </div>
+    </div>
+    <div class="left hide" id = "7">
+        <div class="image-left">
+            <img src="./img/Ron.jpg" alt="Ronald" width="300px">
+        </div>
+        <div class="discription">
+            <h3>Ron Weasley. He is Harry Potter's loyal and steadfast friend. From their first meeting on the Hogwarts Express, Ron's down-to-earth nature and sense of humor instantly endeared him to Harry. Despite coming from a large, poor family, Ron never let that define him, always valuing friendship and bravery above material possessions. Ron's unwavering support and unwavering loyalty were crucial in Harry's journey, whether it was facing dangerous challenges or standing up against injustice.</h3>
+        </div>
+    </div>
+    <div class="right hide" id = "8">
+        <div class="discription">
+            <h3>Hermione Granger is Harry Potter's brilliant and resourceful friend. From the moment they met on the Hogwarts Express, Hermione's intelligence and thirst for knowledge impressed Harry. Her insatiable curiosity and dedication to her studies often made her the voice of reason and the problem solver in their trio. Despite facing challenges and discrimination as a Muggle-born witch, Hermione never wavered in her convictions and fought for equality and justice within the wizarding world.</h3>
+        </div>
+        <div class="image-right">
+            <img src="./img/Hermione.jpg" alt="Hermione" width="300px">
+        </div>
+    </div>
+    <div class="left hide" id = "9">
+        <div class="image-left">
+            <img src="./img/Hagrid.jpg" alt="Hagrid" width="300px">
+        </div>
+        <div class="discription">
+            <h3>Hagrid, the lovable half-giant, is a dear friend and confidant to Harry Potter. From the moment Hagrid rescued Harry from the ruins of Godric's Hollow and introduced him to the magical world, a strong bond formed between them. With his massive stature, wild beard, and gentle nature, Hagrid became a source of comfort and guidance for Harry, always offering a listening ear and sage advice. Despite his unconventional appearance and humble background, Hagrid possessed a deep love and understanding of magical creatures, often serving as their protector and advocate.</h3>
+        </div>
+    </div>
+    <div class="right hide" id = "10">
+        <div class="discription">
+            <h3>Luna Lovegood, often referred to as "Loony" by some of her peers, is an eccentric and enchanting friend of Harry Potter. Luna's unique perspective and unwavering belief in the extraordinary brought a touch of magic to Harry's life. With her dreamy silver-blond hair and distinctive radish earrings, Luna stood out from the crowd, embracing her individuality without hesitation. Despite facing ridicule and mockery from others, Luna remained true to herself, unapologetically embracing her quirks and embracing her own brand of wisdom.</h3>
+        </div>
+        <div class="image-right">
+            <img src="./img/Luna.jpg" alt="Luna" width="300px">
+        </div>
+    </div>
+    <div class="left hide" id = "11">
+        <div class="image-left">
+            <img src="./img/Neville.jpg" alt="Neville" width="300px">
+        </div>
+        <div class="discription">
+            <h3>Neville Longbottom, a timid and unassuming classmate of Harry Potter, blossomed into a courageous and steadfast friend. From their early days at Hogwarts, Neville's shy nature masked his hidden potential and resilience. Despite facing numerous challenges and doubts about his own abilities, Neville's unwavering determination and unwavering loyalty to his friends never wavered. Over time, he proved himself to be a true Gryffindor, stepping up to face adversity and fight for what he believed in. Neville's growth and transformation mirrored Harry's own journey, as he found his voice and embraced his strengths.</h3>
+        </div>
+    </div>
+</body>
+<script>
+
+    let blocks = document.querySelectorAll(".hide");
+    function isElementInViewport(element) {
+        let rect = element.getBoundingClientRect();
+        return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function toggleShowClass() {
+        blocks.forEach(function (block) {
+            if (isElementInViewport(block)) {
+                block.classList.add("show");
+            } else {
+                block.classList.remove("show");
+            }
+        });
+    }
+    window.addEventListener("scroll", toggleShowClass);
+</script>
+</html>

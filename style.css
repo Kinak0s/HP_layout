@@ -1,0 +1,687 @@
+@font-face {
+    font-family: "HP";
+    src: url("/font/HarryP-MVZ6w.ttf");
+  }
+
+body{
+    margin: 0;
+    padding: 0;  
+    overflow-x: hidden;
+}
+
+.body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url("./img/back.jpeg");
+    background-repeat: no-repeat;
+}
+
+header{
+    position: relative;
+}
+
+h3{
+    color: bisque;
+    font-size: 26px;
+}
+
+
+.navbar{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-family: "HP";
+}
+
+.logo{
+    color: bisque;
+    font-size: 26px;
+}
+
+li{
+    list-style: none;
+    color: bisque;
+    font-size: 26px;
+}
+
+a{
+    text-decoration: none;
+    color: bisque;
+    font-size: 26px;
+}
+
+.links > li:hover{
+    color:darkred;
+    text-decoration: underline;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.links li {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px; 
+}
+
+.links li a {
+    text-decoration: none;
+    color: bisque;
+    font-size: 26px;
+}
+
+.links li:hover .drop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.drop {
+    width: 75px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: bisque;
+    list-style-type: none;
+    padding: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
+.drop li {
+    margin-bottom: 10px;
+}
+
+.drop li a {
+    color: darkred;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    height: 400px;
+    color: bisque;
+    background-color: rgba(0, 195, 255, 0.236);
+    border-radius: 20px;
+    border: 2px solid wheat;
+    margin: auto;
+    margin-top: 140px;
+    font-size: 42px;
+    font-family: "HP";
+    line-height: 1.5em;
+}
+
+
+.family {
+    background-image: url('./img/family.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: bisque;
+    font-family: "HP";
+    padding: 0px 250px;
+}
+
+h1{
+    font-size: 72px;
+    text-align: center;
+    margin-top: 50px;
+    color: bisque;
+}
+
+.row .column img{
+    float: left;
+    padding: 0;
+    margin: 0;
+    border-radius: 100px;
+    border: 2px solid wheat;
+}
+
+.row .column img:hover{
+    border-color: darkred;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.imgcont{
+    margin-bottom: 10px;
+}
+
+.column{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.disc{
+    height: 50px;
+    width: 80px;
+    position: relative;
+    text-align: center;
+    font-size: 26px;
+    color: black;
+    background-color: wheat;
+    border-radius: 200px 200px 200px 0px;
+    border: 2px solid #8b0000;
+}
+
+.fig{
+    margin-right: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.button {
+    position: absolute;
+    bottom: 15%;
+    left: 37%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+.button a {
+    padding: 15px 40px;
+    text-align: center;
+    background: wheat; 
+    color: darkred; 
+    border-radius: 100px;
+    border: 2px solid darkred; 
+    z-index: 1; 
+  }
+.column:hover .button {
+    opacity: 1;
+    z-index: 30;
+  }
+
+.about{
+    display: none;
+    position: absolute;
+    max-height: 600px;
+    overflow: auto;
+    top: 20%;
+    left: 25%;
+    margin: 0 auto;
+    width: 50vw;
+    background-color: wheat;
+    color: rgb(74, 43, 16);
+    border-radius: 25px;
+    border: 2px solid darkred;
+    z-index: 1000;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: wheat; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: wheat; 
+}
+
+.about p{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0px 20px;
+    font-size: 20px;
+}
+
+
+.closebtn {
+    margin-top: 10px;
+    margin-right: 10px;
+    color: darkred;
+    font-weight: bold;
+    float: right;
+    font-size: 26px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+
+#over{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%;
+    height:100%;
+    left: 0;
+    top: 0;
+    position:fixed;
+    content: "";
+    z-index: 999;
+    margin: 0 auto;
+    display: none;
+}
+
+.outer-container{
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+
+.home{
+    position: absolute;
+    top: 0%;
+}
+
+.home img{
+    display: block;
+    margin-top: 60px;
+    margin-left: 0px;
+    width: 60px;
+    height: 60px;
+}
+
+.home a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 100px;
+}
+
+
+.Schoolback{
+    position: absolute;
+    margin-right: 20px;
+    margin-top: 16px;
+}
+
+.schoolBody{
+    position: relative;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    padding: 0px 250px;
+}
+
+.subjects{
+    position: relative;
+    padding-right: 60px;
+}
+
+.subjects li{
+    position: relative;
+    color: white;
+    padding: 5px;
+}
+
+.field{
+    position: relative;
+    width: 100%;
+    background-color: rgba(35, 35, 35, 0.57);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px 0px 30px 0px;
+}
+
+.sub-subjects{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.sub-subjects li{
+    background-color: rgba(180, 180, 180, 0.219);
+    border-radius: 10px;
+    padding: 10px;
+    
+    transition: 0.05 ease;
+    box-sizing: border-box;
+}
+
+.sub-subjects.open li {
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu-arrow.arrow{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0px;
+    transition: border 0.5s ease;
+    border-top: 14px solid #fff;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+}
+
+
+.menu-arrow.arrow:hover{
+    border-top: 14px solid darkred;
+}
+
+.courses{
+    width: max-content;
+    background-color: rgba(35, 35, 35, 0.57);
+    border-radius: 10px;
+}
+
+.course{
+    padding: 10px;
+}
+
+
+.start{
+    font-family: "HP";
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color: rgb(14, 6, 4);
+}
+
+.quote{
+    margin-top: 50px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    text-align: center;
+}
+
+.quote h3{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+}
+
+.h1{
+    padding-top: 80px;
+    font-size: 92px;
+}
+
+.left{
+    display: flex;
+    width: 900px;
+    margin-top: 250px;
+    margin-left: 15%;
+}
+
+.image-left{
+    width: 300px;
+    margin-right: 20px;
+}
+
+.left img{
+    border-radius: 50px;
+    box-shadow: 0 0 10px 0 bisque;
+}
+
+.discription{
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-left: auto;
+    background-color:darkslategray;
+    border: 2px solid rgba(255, 228, 196);
+    border-radius: 50px;
+    flex-grow: 1;
+}
+
+
+
+.right{
+    display: flex;
+    width: 900px;
+    margin-left: 35%;
+    margin-top: 220px;
+    margin-bottom: 220px;
+}
+
+.image-right{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.right img{
+    border-radius: 50px;
+    box-shadow: 0 0 10px 0 bisque;
+}
+
+.left div{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s linear, visibility 1s linear;
+}
+
+.left.show div{
+    opacity: 1;
+    visibility: visible;
+}
+
+.right div{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s linear, visibility 0.5s linear;
+}
+
+.right.show div{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s linear, visibility 0.5s linear;
+}
+
+.homeFriend{
+    position: absolute;
+    top: 5%;
+    left: 48.5%;
+}
+
+
+
+#root {
+    background: radial-gradient(ellipse at center, rgba(8, 25, 42, 1) 19%, rgba(1, 4, 6, 1) 100%);
+
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1;
+  }
+  
+  #root>div {
+    position: absolute;
+    background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
+    border-radius: 100%;
+    /* filter:blur(1px); */
+    animation: shine infinite alternate;
+    z-index: 1;
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(.9);
+      opacity: .8;
+    }
+    40% {
+      transform: scale(1);
+      opacity: .9;
+    }
+    40% {
+      transform: scale(.2);
+      opacity: .2;
+    }
+    60% {
+      transform: scale(.2);
+      opacity: .1;
+    }
+    80% {
+      transform: scale(.5);
+      opacity: .5;
+    }
+    100% {
+      transform: scale(.9);
+      opacity: .9;
+    }
+  }
+
+main{
+    margin-bottom: 350px;
+}
+
+.section{
+    text-align: center;
+    padding-top: 250px;
+    z-index: 100;
+}
+
+.section a{
+    margin-right: 10px;
+}
+
+.slider{
+    text-align: center;
+}
+
+.break{
+    margin: 50px;
+}
+
+
+.blockSlider {
+    display: flex;
+    max-width: 418px;
+    width: 100%;
+    height: 638px;
+    border:  2px solid bisque;
+    border-radius: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+.FullArea{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.pointsAreaSize{
+    width:  150px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 5%;
+}
+.point{
+    display: flex;
+    width: 12px;
+    height: 12px;
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.point:hover{
+    background: darkred;
+}
+.imagesArea{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.imageSlider{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    animation-name: Animation;
+    animation-duration: 1s;
+}
+.activeImage{
+    background: darkred;
+    display: flex;
+    border-radius: 20px;
+}
+.btnsAreaSize{
+    position: absolute;
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+}
+i.fa.fa-angle-left, i.fa.fa-angle-right{
+    color: darkred;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 800;
+}
+.blockArrow{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: bisque;
+    border: 1ps solid bisque;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.blockArrow:hover{
+    background: rgba(39,39,39,0.59);
+    border: 1px solid bisque;
+    color:bisque;
+    cursor: pointer;
+}
+
+.blockArrow:active{
+    background: rgba(16,16,16,0.59);
+    border: 1px solid bisque;
+    color: bisque;
+    cursor: pointer;
+}
+
+@-webkit-keyframes Animation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
